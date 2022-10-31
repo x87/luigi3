@@ -176,14 +176,6 @@ function body() {
     Text.PrintHelp("HELP15"); //"Press the...."
   }
 
-  // debug:
-  Streaming.RequestModel(car`taxi`);
-  Streaming.LoadAllModelsNow();
-  let d_pp = p.getCoordinates();
-  let dcar = Car.Create(car`taxi`, d_pp.x + 5, d_pp.y, d_pp.z);
-  p.warpIntoCar(dcar);
-  Streaming.MarkModelAsNoLongerNeeded(car`taxi`);
-
   while (!p.isInAnyCar()) {
     wait(0);
   }
@@ -289,7 +281,6 @@ function body() {
   misty_lm3.turnToFaceCoord(942.0, -268.0, -100.0).clearThreatSearch().setAnimGroup(AnimGroup.SexyWoman);
 
   let door = new ScriptObject(readScmVariable(misty_door1));
-  ScriptObject.Create
   let door1_position_lm3 = door.getHeading();
   while (door1_position_lm3 !== 90.0) {
     wait(0);
